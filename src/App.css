@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
+  font-family: fantasy;
+  color: rgb(27, 82, 27);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style: none;
+  margin-top: 50px;
+}
+h1 {
+  font-size: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  margin-bottom: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h4 {
+  font-size: 15px;
+  opacity: 0.8;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  max-width: 100px;
+}
+.container {
+  max-width: 700px;
+  border-radius: 10px;
+  border: none !important;
+  padding: 30px !important;
+  background-color: rgba(3, 53, 3, 0.205);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-window {
+  margin-right: 20px;
+}
+
+.main-data {
+  margin-top: 30px;
+}
+
+.degree-number {
+  font-size: 80px;
+}
+
+.celsius-sign {
+  position: relative;
+  top: -35px;
+}
+
+.description {
+  opacity: 0.8;
+}
+
+.time {
+  font-size: 40px;
+}
+
+.secondary-data {
+  font-size: 50px;
+  margin-left: 80px;
+}
+
+.unit {
+  position: relative;
+  top: -20px;
 }
