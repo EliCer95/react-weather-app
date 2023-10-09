@@ -3,7 +3,7 @@ import Form from "./Form";
 import MainData from "./MainData";
 import SecondaryData from "./SecondaryData";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container border p-3 mt-5 shadow">
@@ -19,8 +19,7 @@ function App() {
           </div>
         </div>
       </div>
+      <p className="footnote">Open-source code by Eliska Cerna</p>
     </div>
   );
 }
-
-export default App;
