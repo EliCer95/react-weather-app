@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
+import FormattedTime from "./FormattedTime";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -14,8 +17,8 @@ export default function Weather() {
       city: response.data.name,
       max: response.data.main.temp_max,
       min: response.data.main.temp_min,
-      time: "13:56",
-      date: "Friday, October 13",
+      time: new Date(response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -43,12 +46,18 @@ export default function Weather() {
                 <span className="degree-number">
                   {Math.round(weatherData.temperature)}
                 </span>
-                <span className="celsius-sign">°C</span>
+                <span className="celsius-sign"> °C</span>
               </h2>
-              <p className="description">{weatherData.description}</p>
+              <p className="description text-capitalize">
+                {weatherData.description}
+              </p>
               <h1>{weatherData.city}</h1>
-              <h4>Last updated: {weatherData.date}</h4>
-              <div className="time">{weatherData.time}</div>
+              <h4>
+                Last updated: <FormattedDate date={weatherData.date} />
+              </h4>
+              <div className="time">
+                <FormattedTime time={weatherData.time} />
+              </div>
             </div>
           </div>
           <div className="col-6">
@@ -76,11 +85,24 @@ export default function Weather() {
       </div>
     );
   } else {
-    let city = "Praha";
+    let city = "Brno";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5af297a6d7993b7bb3c2ec51eeeaccd4&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-    return "The app is loading.."; //integrate external loading component
+    return (
+      <div className="d-flex justify-content-center">
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="#4fa94d"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      </div>
+    );
   }
 
   //   function getCity(event) {
