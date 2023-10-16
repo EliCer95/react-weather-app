@@ -71,3 +71,22 @@ footer.footnote {
 .weather-icon {
   margin-right: 10px;
 }
+
+.conversion-link {
+  text-decoration: none;
+  color: rgb(24, 171, 24);
+  transition: 100ms ease-in-out;
+}
+
+.conversion-link:hover {
+  font-size: larger;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(24, 171, 24);
+}
+
+.link:hover {
+  color: rgb(3, 79, 3);
+}
