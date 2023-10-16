@@ -7,7 +7,9 @@ export default function App() {
       <div className="container mt-5">
         <Weather defaultCity="Tokyo" />
       </div>
-      <footer className="footnote">Open-source code by Eliska Cerna</footer>
+      <footer className="footnote">
+        This project was coded by Eliska Cerna and is open-sourced on GitHub
+      </footer>
     </div>
   );
 }
