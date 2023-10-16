@@ -12,7 +12,7 @@ export default function WeatherInfo(props) {
           <div className="main-data">
             <h2>
               <span className="weather-icon">
-                <WeatherIcon code={props.data.icon} />
+                <WeatherIcon code={props.data.icon} size={52} />
               </span>
               <WeatherTemperature celsius={props.data.temperature} />
             </h2>
@@ -28,7 +28,7 @@ export default function WeatherInfo(props) {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-6 mt-5">
           <ul>
             <li>Humidity:</li>
             <li>
@@ -39,13 +39,6 @@ export default function WeatherInfo(props) {
             <li>
               <span className="secondary-data">2,1</span>
               <span className="unit"> km/h</span>
-            </li>
-            <li>Max/min:</li>
-            <li>
-              <span className="secondary-data">
-                {Math.round(props.data.max)}/{Math.round(props.data.min)}
-              </span>
-              <span className="unit"> °C</span>
             </li>
           </ul>
         </div>
