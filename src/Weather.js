@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 import { ThreeDots } from "react-loader-spinner";
-import FormattedDate from "./FormattedDate";
-import FormattedTime from "./FormattedTime";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -22,11 +22,19 @@ export default function Weather() {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="row">
-          <form className="d-flex">
+          <form className="d-flex" onSubmit={handleSubmit}>
             <input
               type="search"
               placeholder="Enter a city"
@@ -39,53 +47,10 @@ export default function Weather() {
             />
           </form>
         </div>
-        <div className="row">
-          <div className="col-6">
-            <div className="main-data">
-              <h2>
-                <span className="degree-number">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="celsius-sign"> °C</span>
-              </h2>
-              <p className="description text-capitalize">
-                {weatherData.description}
-              </p>
-              <h1>{weatherData.city}</h1>
-              <h4>
-                Last updated: <FormattedDate date={weatherData.date} />
-              </h4>
-              <div className="time">
-                <FormattedTime time={weatherData.time} />
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Humidity:</li>
-              <li>
-                <span className="secondary-data">{weatherData.humidity}</span>
-                <span className="unit">%</span>
-              </li>
-              <li>Wind speed:</li>
-              <li>
-                <span className="secondary-data">2,1</span>
-                <span className="unit">km/h</span>
-              </li>
-              <li>Max/min:</li>
-              <li>
-                <span className="secondary-data">
-                  {Math.round(weatherData.max)}/{Math.round(weatherData.min)}
-                </span>
-                <span className="unit">°C</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    let city = "Brno";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5af297a6d7993b7bb3c2ec51eeeaccd4&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
@@ -104,12 +69,4 @@ export default function Weather() {
       </div>
     );
   }
-
-  //   function getCity(event) {
-  //     console.log(event.target.value);
-  //   }
-
-  //   function handleSubmit(event) {
-  //     event.preventDefault();
-  //   }
 }
