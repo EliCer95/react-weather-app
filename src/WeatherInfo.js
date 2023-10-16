@@ -31,19 +31,19 @@ export default function WeatherInfo(props) {
             <li>Humidity:</li>
             <li>
               <span className="secondary-data">{props.data.humidity}</span>
-              <span className="unit">%</span>
+              <span className="unit"> %</span>
             </li>
             <li>Wind speed:</li>
             <li>
               <span className="secondary-data">2,1</span>
-              <span className="unit">km/h</span>
+              <span className="unit"> km/h</span>
             </li>
             <li>Max/min:</li>
             <li>
               <span className="secondary-data">
                 {Math.round(props.data.max)}/{Math.round(props.data.min)}
               </span>
-              <span className="unit">°C</span>
+              <span className="unit"> °C</span>
             </li>
           </ul>
         </div>
