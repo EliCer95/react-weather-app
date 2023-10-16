@@ -13,6 +13,7 @@ export default function App() {
           href="https://timely-cascaron-7f0bb7.netlify.app/"
           target="_blank"
           className="link"
+          rel="noreferrer"
         >
           Eliska Cerna
         </a>{" "}
@@ -21,6 +22,7 @@ export default function App() {
           href="https://github.com/EliCer95/react-weather-app/tree/main"
           target="_blank"
           className="link"
+          rel="noreferrer"
         >
           open-sourced on GitHub
         </a>

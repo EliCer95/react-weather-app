@@ -18,7 +18,12 @@ export default function WeatherTemperature(props) {
         <span className="celsius-sign">
           {" "}
           °C |{" "}
-          <a href="/" className="conversion-link" onClick={convertToFahrenheit}>
+          <a
+            href="/"
+            className="conversion-link"
+            onClick={convertToFahrenheit}
+            rel="noreferrer"
+          >
             F°
           </a>
         </span>
@@ -32,7 +37,12 @@ export default function WeatherTemperature(props) {
         <span className="degree-number">{Math.round(fahrenheit)}</span>
         <span className="celsius-sign">
           {" "}
-          <a href="/" className="conversion-link" onClick={convertToCelsius}>
+          <a
+            href="/"
+            className="conversion-link"
+            onClick={convertToCelsius}
+            rel="noreferrer"
+          >
             °C
           </a>{" "}
           | F°
