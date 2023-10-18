@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -11,6 +12,10 @@ export default function WeatherForecast(props) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
   if (loaded) {
     return (
@@ -36,6 +41,19 @@ export default function WeatherForecast(props) {
 
     axios.get(apiUrl).then(showForecast);
 
-    return null;
+    return (
+      <div className="d-flex justify-content-center">
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="#4fa94d"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      </div>
+    );
   }
 }
