@@ -1,8 +1,30 @@
 .WeatherForecast {
   text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  left: 6%;
 }
 
 .temperature-min {
   opacity: 0.6;
   margin-left: 5px;
+}
+
+.WeatherForecastDay {
+  height: max-content;
+  width: max-content;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.weather-icon {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

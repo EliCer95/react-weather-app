@@ -31,5 +31,5 @@ export default function WeatherIcon({ code, alt }) {
     "50n": Cloudy,
   };
 
-  return <img className="icon" src={codeMapping[code]} alt={alt} width={50} />;
+  return <img className="icon" src={codeMapping[code]} alt={alt} width={180} />;
 }

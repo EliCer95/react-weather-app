@@ -10,7 +10,7 @@ export default function App() {
       <footer className="footnote">
         This project was coded by{" "}
         <a
-          href="https://timely-cascaron-7f0bb7.netlify.app/"
+          href="https://www.eliskacerna.com/"
           target="_blank"
           className="link"
           rel="noreferrer"
