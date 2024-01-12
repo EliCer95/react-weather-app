@@ -1,6 +1,5 @@
 .App {
-  font-family: fantasy;
-  color: rgb(27, 82, 27);
+  color: black;
 }
 
 ul {
@@ -9,6 +8,7 @@ ul {
 }
 h1 {
   font-size: 50px;
+  text-align: center;
 }
 
 h2 {
@@ -28,9 +28,8 @@ footer.footnote {
 .container {
   max-width: 700px;
   border-radius: 10px;
-  border: none !important;
   padding: 30px !important;
-  background-color: rgba(3, 53, 3, 0.205);
+  border: 1px solid black;
 }
 
 .search-window {
@@ -54,12 +53,8 @@ footer.footnote {
   opacity: 0.8;
 }
 
-.time {
-  font-size: 40px;
-}
-
 .secondary-data {
-  font-size: 50px;
+  font-size: 20px;
   margin-left: 80px;
 }
 
@@ -68,25 +63,12 @@ footer.footnote {
   top: -20px;
 }
 
-.weather-icon {
-  margin-right: 10px;
-}
-
-.conversion-link {
-  text-decoration: none;
-  color: rgb(24, 171, 24);
-  transition: 100ms ease-in-out;
-}
-
-.conversion-link:hover {
-  font-size: larger;
-}
-
 .link {
   text-decoration: none;
-  color: rgb(24, 171, 24);
 }
 
-.link:hover {
-  color: rgb(3, 79, 3);
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

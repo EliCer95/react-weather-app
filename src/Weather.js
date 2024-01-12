@@ -9,6 +9,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -16,6 +17,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       city: response.data.name,
+      country: response.data.sys.country,
       max: response.data.main.temp_max,
       min: response.data.main.temp_min,
       time: new Date(response.data.dt * 1000),
@@ -46,13 +48,8 @@ export default function Weather(props) {
             <input
               type="search"
               placeholder="Enter a city"
-              className="form-control search-window shadow"
+              className="form-control search-window"
               onChange={handleCityChange}
-            />
-            <input
-              type="submit"
-              value="search"
-              className="btn btn-success shadow"
             />
           </form>
         </div>
