@@ -1,11 +1,12 @@
 .WeatherForecast {
   text-align: center;
+  width: 620px;
   border: 1px solid black;
-  background-color: white;
+  background-color: #e2dfbe;
   border-radius: 10px;
   position: absolute;
   top: 80%;
-  left: 6%;
+  left: 40px;
 }
 
 .temperature-min {
@@ -16,8 +17,9 @@
 .WeatherForecastDay {
   height: max-content;
   width: max-content;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
 }
 
 .weather-icon {

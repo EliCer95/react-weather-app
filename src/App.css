@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url(fonts/Quicksand.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
 .App {
-  color: black;
+  color: #3c3c3e;
+  font-family: Quicksand;
 }
 
 h1 {
@@ -21,15 +29,25 @@ ul {
 footer.footnote {
   margin-top: 100px;
   text-align: center;
+  color: rgba(0, 0, 0, 0.606);
+}
+
+a {
+  color: rgb(95, 175, 197);
+}
+
+a:hover {
+  color: rgb(68, 129, 146);
 }
 
 .container {
-  max-width: 700px;
+  width: 700px;
   min-height: 470px;
   border-radius: 10px;
   padding: 30px 30px 0px 30px;
   border: 1px solid black;
   position: relative;
+  background-color: #fff6dc;
 }
 
 .WeatherInfo {
@@ -83,7 +101,7 @@ footer.footnote {
 
 @media (max-width: 720px) {
   h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .degree-number {
@@ -91,6 +109,23 @@ footer.footnote {
   }
 
   img {
-    width: 100px;
+    width: 50px;
+  }
+
+  .container {
+    min-height: 350px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .celsius-sign {
+    position: relative;
+    top: -10px;
+  }
+
+  ul {
+    font-size: smaller;
   }
 }
